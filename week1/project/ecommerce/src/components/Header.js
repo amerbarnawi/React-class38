@@ -1,13 +1,7 @@
 import React from "react";
 
 function Header() {
-  return (
-    <div>
-      <h1>E-Commerce project</h1>
-      <p>By A.Barnawi / Week-1</p>
-      <hr />
-    </div>
-  );
+  return <h1>Products</h1>;
 }
 
 export default Header;

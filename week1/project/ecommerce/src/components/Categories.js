@@ -24,25 +24,17 @@ function Categories() {
     );
   }
 
-  function createButtons() {
-    return categories.map((category, index) => {
-      return (
+  return (
+    <div>
+      <div className="categories-buttons">
         <GetCategoryButton
           info={{
-            id: index,
-            categoryButton: category,
+            categories: categories,
             clickHandler: getProductsByCategory,
             selected: selected,
           }}
         />
-      );
-    });
-  }
-
-  return (
-    <div>
-      <h2>Products</h2>
-      <div className="categories-buttons">{createButtons()}</div>
+      </div>
       <Products productsArray={productsArray} />
     </div>
   );
