@@ -27,13 +27,19 @@ function Categories() {
   return (
     <div>
       <div className="categories-buttons">
-        <GetCategoryButton
-          info={{
-            categories: categories,
-            clickHandler: getProductsByCategory,
-            selected: selected,
-          }}
-        />
+        {categories.map((category, index) => {
+          return (
+            <GetCategoryButton
+              key={index}
+              info={{
+                index: index,
+                category: category,
+                clickHandler: getProductsByCategory,
+                selected: selected,
+              }}
+            />
+          );
+        })}
       </div>
       <Products productsArray={productsArray} />
     </div>

@@ -1,10 +1,12 @@
 import React from "react";
 import ProductCard from "./Products/ProductCard";
 
-function Products(props) {
+function Products({ productsArray }) {
   return (
     <ul className="products-container">
-      <ProductCard products={props.productsArray} />
+      {productsArray.map((product, index) => {
+        return <ProductCard key={index} product={product} />;
+      })}
     </ul>
   );
 }

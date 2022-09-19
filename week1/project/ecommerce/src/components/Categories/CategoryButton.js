@@ -1,22 +1,20 @@
 import React from "react";
 
 function GetCategoryButton({ info }) {
-  return info.categories.map((category, index) => {
-    return (
-      <button
-        key={index}
-        className={
-          +info.selected === index
-            ? "category-button selected-button"
-            : "category-button"
-        }
-        id={index}
-        onClick={info.clickHandler}
-      >
-        {category}
-      </button>
-    );
-  });
+  return (
+    <button
+      key={info.category}
+      className={
+        +info.selected === info.index
+          ? "category-button selected-button"
+          : "category-button"
+      }
+      id={info.index}
+      onClick={info.clickHandler}
+    >
+      {info.category}
+    </button>
+  );
 }
 
 export default GetCategoryButton;
