@@ -6,7 +6,7 @@ function GetCategoryButton({ info }) {
       <button
         key={index}
         className={
-          +info.selected === info.id
+          +info.selected === index
             ? "category-button selected-button"
             : "category-button"
         }
