@@ -1,0 +1,138 @@
+.container {
+  min-width: 100%;
+  margin-left: 20px;
+}
+
+.product-card {
+  margin: 10px;
+  object-fit: contain;
+  width: 30%;
+  list-style: none;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
+  max-height: fit-content;
+}
+
+.product-card:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  transform: scale(1.05);
+}
+
+.product-card-link {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+}
+
+img {
+  max-width: 100%;
+  height: 200px;
+}
+
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.categories-buttons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.category-button,
+.home-button {
+  margin-left: 10px;
+  padding: 10px;
+  border: none;
+  font-size: 18px;
+  height: 40px;
+  font-weight: bold;
+}
+
+.category-button:hover,
+.home-button:hover {
+  background-color: rgb(195, 192, 192);
+  cursor: pointer;
+}
+
+.home-button {
+  text-decoration: none;
+  color: black;
+  background-color: rgb(220, 219, 219);
+}
+
+.selected-button {
+  background-color: rgb(196, 195, 195);
+}
+
+.product-details-container {
+  width: 80%;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.product-details-container img {
+  height: 300px;
+}
+
+.product-details-container p {
+  text-align: justify;
+  max-width: 80%;
+  margin: 20px auto 50px auto;
+}
+
+.rating {
+  display: flex;
+  justify-content: center;
+}
+
+.rating ul {
+  list-style: none;
+  display: flex;
+  width: 180px;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+@media (max-width: 600px) {
+  .container {
+    object-fit: contain;
+    min-width: fit-content;
+  }
+  .product-card {
+    width: 80%;
+  }
+
+  .products-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  img {
+    height: 300px;
+    max-width: 90%;
+    justify-self: center;
+  }
+
+  .categories-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 10px auto;
+  }
+
+  .category-button {
+    flex: 1;
+    margin-top: 20px;
+  }
+}
+@media (min-width: 601px) and (max-width: 1000px) {
+  .product-card {
+    width: 45%;
+  }
+
+  .category-button {
+    margin-top: 20px;
+  }
+}
