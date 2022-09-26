@@ -5,7 +5,7 @@ import CategoryButton from "./CategoryButton";
 
 function Navbar() {
   const [categories, setCategories] = useState(() => []);
-  const [category, setCategory] = useState(() => "");
+  const [selectedCategory, setSelectedCategory] = useState(() => "");
   const [selected, setSelected] = useState(() => undefined);
 
   const url = "https://fakestoreapi.com/products/categories";
@@ -14,7 +14,7 @@ function Navbar() {
   function getCategory(e) {
     const category = e.target.innerText;
     const id = e.target.id;
-    setCategory(category);
+    setSelectedCategory(category);
     setSelected(id);
   }
 
@@ -41,7 +41,7 @@ function Navbar() {
           })}
         </div>
       )}
-      <Products category={category} />
+      <Products category={selectedCategory} />
     </div>
   );
 }
