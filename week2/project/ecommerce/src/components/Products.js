@@ -23,8 +23,8 @@ function Products({ category }) {
         <h3>{error}</h3>
       ) : (
         <ul className="products-container">
-          {products.map((product, index) => {
-            return <ProductCard key={index} product={product} />;
+          {products.map((product) => {
+            return <ProductCard key={product.id} product={product} />;
           })}
         </ul>
       )}
