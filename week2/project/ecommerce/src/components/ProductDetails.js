@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import useFetchData from "./Hook";
 
 function ProductDetails() {
-  const [productDetails, setProductDetails] = useState(() => {});
+  const [productDetails, setProductDetails] = useState({});
 
   const params = useParams();
   const url = `https://fakestoreapi.com/products/${params.id}`;

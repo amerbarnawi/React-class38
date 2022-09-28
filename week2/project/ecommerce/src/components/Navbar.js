@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import Products from "./Products";
 import useFetchData from "./Hook";
 import CategoryButton from "./CategoryButton";
 
-function Navbar() {
+function Navbar({ setCategory }) {
   const [categories, setCategories] = useState(() => []);
-  const [selectedCategory, setSelectedCategory] = useState(() => "");
-  const [selected, setSelected] = useState(() => undefined);
+  const [selected, setSelected] = useState(undefined);
 
   const url = "https://fakestoreapi.com/products/categories";
   const { error, isLoading } = useFetchData(url, setCategories);
@@ -14,7 +12,7 @@ function Navbar() {
   function getCategory(e) {
     const category = e.target.innerText;
     const id = e.target.id;
-    setSelectedCategory(category);
+    setCategory(category);
     setSelected(id);
   }
 
@@ -41,7 +39,6 @@ function Navbar() {
           })}
         </div>
       )}
-      <Products category={selectedCategory} />
     </div>
   );
 }
