@@ -8,7 +8,7 @@ function Header() {
         <h1>FAKE STORE</h1>
       </div>
       <div className="header-links">
-        <Link className="home-button" to="/favorites">
+        <Link className="favorite-button" to="/favorites">
           Favorites
         </Link>
         <Link className="home-button" to="/">

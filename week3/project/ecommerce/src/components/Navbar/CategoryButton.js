@@ -1,20 +1,28 @@
-import React from "react";
+import { NavLink, useParams } from "react-router-dom";
 
-function CategoryButton({ info }) {
-  const { index, category, clickHandler, selected } = info;
+function CategoryButton({ category }) {
+  const categoryFromPath = useParams();
+
+  function setClassName() {
+    if (
+      categoryFromPath.category === category &&
+      categoryFromPath.category !== undefined
+    ) {
+      return "category-button selected-button";
+    } else {
+      return "category-button";
+    }
+  }
+
   return (
-    <button
+    <NavLink
+      to={`/${category}`}
       key={category}
-      className={
-        +selected === index
-          ? "category-button selected-button"
-          : "category-button"
-      }
-      id={index}
-      onClick={clickHandler}
+      className={setClassName()}
+      id={category}
     >
       {category}
-    </button>
+    </NavLink>
   );
 }
 

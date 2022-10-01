@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import Header from "./Header";
 import Navbar from "./Navbar/Navbar";
 import Products from "./Products/Products";
 
 function Home() {
-  const [selectedCategory, setSelectedCategory] = useState("");
   return (
     <div className="container">
       <Header />
-      <Navbar setCategory={setSelectedCategory} />
-      <Products category={selectedCategory} />
+      <Navbar />
+      <Products />
     </div>
   );
 }

@@ -24,7 +24,7 @@
   margin: 10px;
   padding: 10px;
   object-fit: contain;
-  width: 30%;
+  width: 25%;
   list-style: none;
   text-align: center;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -54,6 +54,7 @@ img {
   flex-wrap: wrap;
   width: 90%;
   margin: 20px auto;
+  justify-content: center;
 }
 
 .categories-buttons {
@@ -65,7 +66,8 @@ img {
 }
 
 .category-button,
-.home-button {
+.home-button,
+.favorite-button {
   margin-left: 10px;
   padding: 10px;
   border: 1px solid gray;
@@ -76,18 +78,24 @@ img {
 }
 
 .category-button {
-  width: 180px;
+  width: 150px;
+  height: fit-content;
+  text-align: center;
+  text-decoration: none;
+  color: black;
 }
 
 .category-button:hover,
-.home-button:hover {
+.home-button:hover,
+.favorite-button:hover {
   color: white;
   cursor: pointer;
   background-color: darkorange;
   transition: all 0.3s;
 }
 
-.home-button {
+.home-button,
+.favorite-button {
   border-radius: 10px;
   text-decoration: none;
   color: black;
@@ -151,12 +159,8 @@ h4 {
 
 @media (max-width: 600px) {
   .container {
-    object-fit: contain;
-    width: 100%;
-  }
-
-  .products-container {
-    width: 100%;
+    object-fit: fill;
+    min-width: 100%;
   }
 
   .header {
@@ -164,13 +168,19 @@ h4 {
     align-items: center;
     width: 100%;
   }
+
   .product-card {
     width: 80%;
   }
 
+  .product-card img {
+    width: 80%;
+    height: auto;
+  }
+
   .products-container {
     flex-direction: column;
-    width: 100%;
+    width: 90%;
   }
 
   img {

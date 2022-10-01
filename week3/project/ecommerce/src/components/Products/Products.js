@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import ProductCard from "./ProductCard";
 import useFetchData from "../Hooks/FetchHook";
+import { useParams } from "react-router-dom";
 
-function Products({ category }) {
+function Products() {
   const [products, setProducts] = useState(() => []);
 
   let url = "";
+  const { category } = useParams();
 
-  if (category === "") {
+  if (category === undefined) {
     url = "https://fakestoreapi.com/products";
   } else {
     url = `https://fakestoreapi.com/products/category/${category}`;
